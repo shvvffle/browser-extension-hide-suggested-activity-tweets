@@ -1,0 +1,30 @@
+{
+  "manifest_version": 2,
+  "name": "Hide suggested activity tweets",
+  "description": "Hides your followers' or who you follow activity (what they've liked).",
+  "version": "1.0",
+  "browser_action": {
+        "default_icon": "img/hide_likes_twitter_default-32.png"
+  },
+  "icons": {
+    "32": "img/hide_likes_twitter_default-32.png",
+    "64": "img/hide_likes_twitter_default-64.png",
+    "128": "img/hide_likes_twitter_default-128.png",
+    "256": "img/hide_likes_twitter_default-256.png"
+  },
+  "permissions": [
+    "tabs",
+    "activeTab"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.twitter.com/*",
+        "http://*.twitter.com/*"
+      ],
+      "css": [
+        "style.css"
+      ]
+    }
+  ]
+}
